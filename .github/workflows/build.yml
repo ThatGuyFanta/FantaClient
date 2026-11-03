@@ -1,0 +1,33 @@
+name: Build FantaClient
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Build
+        working-directory: fantaclient
+        run: |
+          chmod +x ./gradlew
+          ./gradlew build
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: FantaClient-JAR
+          path: fantaclient/build/libs/*.jar
+          if-no-files-found: error
