@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "net.fanta.client.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"MinecraftClientMixin",
+		"GameRendererMixin",
+		"LightmapTextureManagerMixin",
+		"WorldRendererMixin",
+		"InGameHudMixin"
+	],
+	"injectors": {
+		"defaultRequire": 0
+	}
+}
