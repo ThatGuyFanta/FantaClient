@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "fantaclient",
+  "version": "${version}",
+  "name": "FantaClient",
+  "description": "A clean, custom client with a minimalist interface and useful utility modules.",
+  "authors": [
+    "FantaDev"
+  ],
+  "contact": {},
+  "license": "CC0-1.0",
+  "icon": "assets/fantaclient/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.fanta.client.FantaClientInitializer"
+    ]
+  },
+  "mixins": [
+    {
+      "config": "fantaclient.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
